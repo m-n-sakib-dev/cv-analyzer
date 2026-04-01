@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -r \"openai\\\\|anthropic\\\\|gpt\\\\|claude\\\\|huggingface\\\\|ai\\\\|ml\" /c/Users/mdsak/Herd/cv-analyzer --include=*.php --include=*.json)"
+    ]
+  }
+}
