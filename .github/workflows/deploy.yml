@@ -1,0 +1,25 @@
+name: Laravel Auto Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: composer install --no-dev --optimize-autoloader
+
+      - name: Run Migrations
+        run: php artisan migrate --force
+
+      - name: Clear Cache
+        run: |
+          php artisan config:cache
+          php artisan route:cache
+          php artisan view:clear
