@@ -26,5 +26,4 @@ jobs:
           php artisan migrate --force
 
       - name: Restart Server
-          run: sudo supervisorctl restart laravel-serve:*
-
+        run: sudo supervisorctl restart laravel-serve:*
