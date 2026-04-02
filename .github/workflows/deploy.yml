@@ -17,8 +17,7 @@ jobs:
 
       - name: Run Migrations
 
-        run: php artisan config:clear
-          php artisan migrate --force
+        run: php artisan migrate --force
 
       - name: Clear Cache
         run: |
