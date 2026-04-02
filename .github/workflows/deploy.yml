@@ -24,3 +24,7 @@ jobs:
           php artisan key:generate
           php artisan config:clear
           php artisan migrate --force
+
+      - name: Restart Server
+          run: sudo supervisorctl restart laravel-serve:*
+
