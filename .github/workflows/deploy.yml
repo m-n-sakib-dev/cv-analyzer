@@ -25,5 +25,8 @@ jobs:
           php artisan config:clear
           php artisan migrate --force
 
+      - name: Create Storage Link
+        run: php artisan storage:link || true
+
       - name: Restart Server
         run: sudo supervisorctl restart laravel-serve:*
