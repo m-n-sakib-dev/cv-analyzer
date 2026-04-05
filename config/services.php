@@ -34,5 +34,10 @@ return [
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
+    // config/services.php ফাইলে গিয়ে নিচের মতো যোগ করুন
+    'ai_cv_analyzer' => [
+        'url' => env('AI_CV_ANALYZER_URL', 'http://127.0.0.1:8000'),
+    ],
+
 
 ];

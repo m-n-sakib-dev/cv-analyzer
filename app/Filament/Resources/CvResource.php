@@ -27,7 +27,8 @@ class CvResource extends Resource
 
     public static function table(Table $table): Table
     {
-        return CvTable::make($table);
+        return CvTable::make($table)
+            ->recordUrl(fn (Cv $record) => static::getUrl('view', ['record' => $record]));
     }
 
     public static function getPages(): array
@@ -35,6 +36,7 @@ class CvResource extends Resource
         return [
             'index'  => Pages\ListCvs::route('/'),
             'create' => Pages\CreateCv::route('/create'),
+            'view'   => Pages\ViewCv::route('/{record}'),
         ];
     }
 }

@@ -30,10 +30,13 @@ class CreateCv extends CreateRecord
             $fullPath = storage_path('app/public/' . $filePath);
             $fullPath = str_replace(['/', '\\'], DIRECTORY_SEPARATOR, $fullPath);
 
-            $response = Http::post('http://192.168.10.231:8080/analyze-cv', [
+            $baseUrl = config('services.ai_cv_analyzer.url');
+
+            $response = Http::post($baseUrl . '/analyze-cv', [
                 'file_path' => $fullPath,
-                'position' => $designation,
+                'position'  => $designation,
             ]);
+
 
             if ($response->successful()) {
                 $aiData      = $response->json('data');
