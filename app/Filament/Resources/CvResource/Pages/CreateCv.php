@@ -30,7 +30,7 @@ class CreateCv extends CreateRecord
             $fullPath = storage_path('app/public/' . $filePath);
             $fullPath = str_replace(['/', '\\'], DIRECTORY_SEPARATOR, $fullPath);
 
-            $response = Http::post('http://192.168.10.231:8000/analyze-cv', [
+            $response = Http::post('http://192.168.10.231:8080/analyze-cv', [
                 'file_path' => $fullPath,
                 'position' => $designation,
             ]);
