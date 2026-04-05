@@ -35,6 +35,6 @@ class CvTable
                     ->label('Uploaded')
                     ->dateTime('d M Y, H:i'),
             ])
-            ->defaultSort('created_at', 'desc');
+            ->defaultSort('ratings', 'desc');
     }
 }
